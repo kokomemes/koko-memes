@@ -101,6 +101,20 @@ footer{border-top:1px solid var(--border);padding:15px 24px;display:flex;justify
 <script>
 function toggleMenu(){document.getElementById("slideMenu").classList.toggle("open");document.getElementById("menuOvl").classList.toggle("open");}
 function closeMenu(){document.getElementById("slideMenu").classList.remove("open");document.getElementById("menuOvl").classList.remove("open");}
+
+function comingSoon(e) {
+  e.preventDefault();
+  var t = document.getElementById("csToast");
+  if (!t) {
+    t = document.createElement("div");
+    t.id = "csToast";
+    t.style.cssText = "position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:#fff;color:#000;padding:10px 22px;border-radius:6px;font-family:Bebas Neue,sans-serif;font-size:16px;letter-spacing:2px;z-index:999;opacity:0;transition:opacity .2s;";
+    t.textContent = "COMING SOON";
+    document.body.appendChild(t);
+  }
+  t.style.opacity = "1";
+  setTimeout(function(){ t.style.opacity = "0"; }, 2000);
+}
 </script>
 </body>
 </html>
